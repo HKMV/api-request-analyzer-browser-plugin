@@ -1,0 +1,108 @@
+@unocss all;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  min-width: 500px;
+  min-height: 300px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --bg: #11111b;
+  --bg-card: #181825;
+  --border: #313244;
+  --bar-bg: #313244;
+  --text: #cdd6f4;
+  --text-secondary: #bac2de;
+  --text-muted: #a6adc8;
+  --text-dim: #6c7086;
+  --accent: #89b4fa;
+  --hover: rgba(255, 255, 255, 0.05);
+  --selected: rgba(137, 180, 250, 0.1);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8f9fa;
+    --bg-card: #ffffff;
+    --border: #dee2e6;
+    --bar-bg: #e9ecef;
+    --text: #212529;
+    --text-secondary: #495057;
+    --text-muted: #6c757d;
+    --text-dim: #adb5bd;
+    --accent: #0d6efd;
+    --hover: rgba(0, 0, 0, 0.05);
+    --selected: rgba(13, 110, 253, 0.1);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #11111b;
+  --bg-card: #181825;
+  --border: #313244;
+  --bar-bg: #313244;
+  --text: #cdd6f4;
+  --text-secondary: #bac2de;
+  --text-muted: #a6adc8;
+  --text-dim: #6c7086;
+  --accent: #89b4fa;
+  --hover: rgba(255, 255, 255, 0.05);
+  --selected: rgba(137, 180, 250, 0.1);
+}
+
+:root[data-theme="light"] {
+  --bg: #f8f9fa;
+  --bg-card: #ffffff;
+  --border: #dee2e6;
+  --bar-bg: #e9ecef;
+  --text: #212529;
+  --text-secondary: #495057;
+  --text-muted: #6c757d;
+  --text-dim: #adb5bd;
+  --accent: #0d6efd;
+  --hover: rgba(0, 0, 0, 0.05);
+  --selected: rgba(13, 110, 253, 0.1);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-dim);
+}
+
+::selection {
+  background: rgba(137, 180, 250, 0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.15s ease-out;
+}
