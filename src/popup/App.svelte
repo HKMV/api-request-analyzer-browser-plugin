@@ -399,7 +399,7 @@
                   on:click|stopPropagation={() => copyToClipboard(req.url)} title="复制URL">{@html svg.clipboard}</button>
               </div>
               <div class="px-2 text-center font-mono {statusColor(req.statusCode)} truncate">{req.statusCode}</div>
-              <div class="px-2 text-right font-mono text-[var(--text-secondary)] truncate">{formatDuration(req.timing.total)}</div>
+              <div class="px-2 text-right font-mono text-[var(--text-secondary)] truncate" title={req.timing.total.toFixed(2) + 'ms'}>{formatDuration(req.timing.total)}</div>
             </div>
           {/each}
         </div>
